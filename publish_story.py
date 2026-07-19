@@ -70,14 +70,19 @@ def main():
         return
 
     print(f"Peça: {entry['reference']}  trilha: {entry['track']}")
-    container = call("POST", f"{IG_USER_ID}/media",
-                     {"media_type": "STORIES", "image_url": entry["image_url"]})
+    if entry.get("video_url"):
+        params = {"media_type": "STORIES", "video_url": entry["video_url"]}
+        print("Formato: vídeo 59s com trilha")
+    else:
+        params = {"media_type": "STORIES", "image_url": entry["image_url"]}
+        print("Formato: imagem")
+    container = call("POST", f"{IG_USER_ID}/media", params)
     cid = container.get("id")
     if not cid:
         sys.exit(f"Container sem id: {container}")
     print(f"Container: {cid}")
 
-    for _ in range(36):  # até ~3min
+    for _ in range(120):  # até ~10min (vídeo processa mais devagar)
         st = call("GET", cid, {"fields": "status_code"})
         code = st.get("status_code")
         if code == "FINISHED":
