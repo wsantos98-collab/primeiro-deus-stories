@@ -1,0 +1,35 @@
+name: Publicar story Primeiro Deus
+
+on:
+  schedule:
+    - cron: "30 9 * * *"   # 09:30 UTC = 06:30 BRT
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true = só valida a ingestão, não publica"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency: publicar-story
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publicar story do dia
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: python3 publish_story.py
+
+      - name: Registrar publicação
+        run: |
+          git config user.name "primeiro-deus-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fila/published.json
+          git diff --cached --quiet || { git commit -m "registro: story publicado"; git push; }
