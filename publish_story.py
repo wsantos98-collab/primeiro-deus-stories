@@ -76,23 +76,41 @@ def main():
     else:
         params = {"media_type": "STORIES", "image_url": entry["image_url"]}
         print("Formato: imagem")
-    container = call("POST", f"{IG_USER_ID}/media", params)
-    cid = container.get("id")
-    if not cid:
-        sys.exit(f"Container sem id: {container}")
-    print(f"Container: {cid}")
 
-    for _ in range(120):  # até ~10min (vídeo processa mais devagar)
-        st = call("GET", cid, {"fields": "status_code"})
-        code = st.get("status_code")
-        if code == "FINISHED":
+    # O processamento de vídeo da Meta às vezes reporta ERROR transitório e
+    # depois conclui (visto em 2026-07-19). Estratégia: por container, tolerar
+    # ERROR por até 3min de poll extra; se persistir, criar container novo
+    # (até 3 tentativas no total).
+    cid = None
+    for attempt in range(1, 4):
+        container = call("POST", f"{IG_USER_ID}/media", params)
+        cid = container.get("id")
+        if not cid:
+            sys.exit(f"Container sem id: {container}")
+        print(f"Tentativa {attempt}: container {cid}")
+
+        error_polls = 0
+        finished = False
+        for _ in range(120):  # até ~10min por tentativa
+            st = call("GET", cid, {"fields": "status_code"})
+            code = st.get("status_code")
+            if code == "FINISHED":
+                finished = True
+                break
+            if code == "ERROR":
+                error_polls += 1
+                if error_polls >= 36:  # ERROR persistente por ~3min
+                    print(f"Container {cid} em ERROR persistente.")
+                    break
+            time.sleep(5)
+        if finished:
             break
-        if code == "ERROR":
-            sys.exit(f"Container em ERROR: {st}")
-        time.sleep(5)
+        if attempt < 3:
+            print("Aguardando 60s antes da próxima tentativa...")
+            time.sleep(60)
     else:
-        sys.exit("Timeout esperando o container ficar FINISHED.")
-    print("Container FINISHED (Meta já baixou a imagem).")
+        sys.exit("3 tentativas de container falharam (ERROR/timeout).")
+    print("Container FINISHED (Meta já baixou a mídia).")
 
     if DRY_RUN:
         print("DRY RUN: não publicando. Container expira sozinho em 24h.")
