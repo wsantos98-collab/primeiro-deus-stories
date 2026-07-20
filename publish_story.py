@@ -51,6 +51,19 @@ def main():
     if not TOKEN:
         sys.exit("IG_TOKEN ausente.")
 
+    # Runs agendadas acordam ~40min antes e seguram até as 5h30 BRT em ponto
+    # (o atraso do scheduler do GitHub cai dentro dessa folga). Runs manuais
+    # (workflow_dispatch) publicam imediatamente.
+    if os.environ.get("WAIT_FOR_TARGET", "false").strip().lower() == "true":
+        now = datetime.now(BRT)
+        target = now.replace(hour=5, minute=30, second=0, microsecond=0)
+        wait = (target - now).total_seconds()
+        if wait > 0:
+            print(f"Aguardando {int(wait)}s até as 05:30 BRT...")
+            time.sleep(wait)
+        else:
+            print("Já passou das 05:30 BRT; publicando imediatamente.")
+
     today = datetime.now(BRT).strftime("%Y-%m-%d")
     print(f"Data (BRT): {today}  dry_run={DRY_RUN}")
 

@@ -2,7 +2,8 @@ name: Publicar story Primeiro Deus
 
 on:
   schedule:
-    - cron: "15 9 * * *"   # 09:15 UTC; com o atraso usual do GitHub, publica ~6h30 BRT
+    - cron: "50 7 * * *"   # 07:50 UTC = 04:50 BRT; acorda antes e espera até 05:30 em ponto
+    - cron: "0 9 * * *"    # 09:00 UTC = 06:00 BRT; rede de segurança se o 1º for pulado (idempotente)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -18,6 +19,7 @@ concurrency: publicar-story
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -25,11 +27,13 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          WAIT_FOR_TARGET: ${{ github.event_name == 'schedule' }}
         run: python3 publish_story.py
 
       - name: Registrar publicação
         run: |
           git config user.name "primeiro-deus-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
           git add fila/published.json
           git diff --cached --quiet || { git commit -m "registro: story publicado"; git push; }
