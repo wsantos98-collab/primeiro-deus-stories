@@ -34,6 +34,7 @@ jobs:
         run: |
           git config user.name "primeiro-deus-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
           git add fila/published.json
-          git diff --cached --quiet || { git commit -m "registro: story publicado"; git push; }
+          git diff --cached --quiet || git commit -m "registro: story publicado"
+          git pull --rebase
+          git push
