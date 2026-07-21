@@ -2,8 +2,13 @@ name: Publicar story Primeiro Deus
 
 on:
   schedule:
-    - cron: "50 7 * * *"   # 07:50 UTC = 04:50 BRT; acorda antes e espera até 05:30 em ponto
-    - cron: "0 9 * * *"    # 09:00 UTC = 06:00 BRT; rede de segurança se o 1º for pulado (idempotente)
+    # Repo público (cota ilimitada): despertares escalonados; o primeiro que acordar
+    # segura até as 05:30 BRT em ponto e publica; os demais dão skip idempotente.
+    # Atrasos de até ~3h do scheduler do GitHub ficam cobertos.
+    - cron: "30 5 * * *"   # 05:30 UTC = 02:30 BRT
+    - cron: "30 6 * * *"   # 06:30 UTC = 03:30 BRT
+    - cron: "30 7 * * *"   # 07:30 UTC = 04:30 BRT
+    - cron: "0 9 * * *"    # 09:00 UTC = 06:00 BRT; rede de segurança final
   workflow_dispatch:
     inputs:
       dry_run:
@@ -19,7 +24,7 @@ concurrency: publicar-story
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 200
     steps:
       - uses: actions/checkout@v4
 
