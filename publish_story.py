@@ -47,6 +47,43 @@ def call(method, path, params):
         sys.exit(f"ERRO rede {path}: {e}")
 
 
+def story_publicado_hoje(today):
+    """Pergunta à própria API se já existe story publicado na data BRT de hoje.
+
+    Guard real de idempotência. O fila/published.json sozinho não protege:
+    o actions/checkout materializa o SHA do evento, então um run disparado
+    ANTES da publicação lê um published.json congelado e não enxerga o
+    registro que outro run acabou de commitar (foi o que duplicou o story de
+    2026-08-07). O edge /stories lista os stories ativos das últimas 24h, que
+    cobre com folga a janela dos 4 despertares.
+    """
+    try:
+        r = call("GET", f"{IG_USER_ID}/stories", {"fields": "id,timestamp"})
+    except SystemExit:
+        print("AVISO: não deu pra consultar /stories; seguindo com o guard do arquivo.")
+        return None
+    for item in r.get("data", []):
+        ts = item.get("timestamp", "")
+        try:
+            quando = datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S%z").astimezone(BRT)
+        except ValueError:
+            continue
+        if quando.strftime("%Y-%m-%d") == today:
+            return item.get("id")
+    return None
+
+
+def registrar(published, today, media_id):
+    published[today] = media_id
+    with open("fila/published.json", "w", encoding="utf-8") as f:
+        json.dump(published, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    # Pista pro step de registro do workflow reconstruir o arquivo a partir do
+    # remoto (evita o conflito de rebase que derrubou o run de 2026-08-07).
+    with open(".registro-do-dia.json", "w", encoding="utf-8") as f:
+        json.dump({"date": today, "media_id": media_id}, f)
+
+
 def main():
     if not TOKEN:
         sys.exit("IG_TOKEN ausente.")
@@ -80,6 +117,12 @@ def main():
         published = json.load(f)
     if today in published:
         print(f"Já publicado hoje (media_id {published[today]}). Nada a fazer.")
+        return
+
+    ja = story_publicado_hoje(today)
+    if ja:
+        print(f"A API já tem story de hoje no ar (media_id {ja}). Registrando e saindo.")
+        registrar(published, today, ja)
         return
 
     print(f"Peça: {entry['reference']}  trilha: {entry['track']}")
@@ -129,16 +172,20 @@ def main():
         print("DRY RUN: não publicando. Container expira sozinho em 24h.")
         return
 
+    # Segunda checagem colada no publish: a ingestão do vídeo leva minutos e
+    # outro run pode ter publicado nesse intervalo.
+    ja = story_publicado_hoje(today)
+    if ja:
+        print(f"Outro run publicou durante a ingestão (media_id {ja}). Abortando publish.")
+        registrar(published, today, ja)
+        return
+
     pub = call("POST", f"{IG_USER_ID}/media_publish", {"creation_id": cid})
     media_id = pub.get("id")
     if not media_id:
         sys.exit(f"media_publish sem id: {pub}")
     print(f"PUBLICADO. media_id: {media_id}")
-
-    published[today] = media_id
-    with open("fila/published.json", "w", encoding="utf-8") as f:
-        json.dump(published, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    registrar(published, today, media_id)
 
 
 if __name__ == "__main__":
