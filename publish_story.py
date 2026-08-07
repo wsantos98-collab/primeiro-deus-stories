@@ -31,20 +31,38 @@ DRY_RUN = os.environ.get("DRY_RUN", "false").strip().lower() == "true"
 
 
 def call(method, path, params):
+    """Chama a Graph API, com backoff em erro transitório.
+
+    A Meta devolve HTTP 4xx/5xx com is_transient=true quando o app bate no
+    limite de requisições ("Application request limit reached", code 4).
+    Morrer na hora nesse caso derruba uma publicação por um erro que passa
+    sozinho em minutos, então aqui espera e tenta de novo antes de desistir.
+    """
     params = dict(params)
     params["access_token"] = TOKEN
     data = urllib.parse.urlencode(params)
-    if method == "GET":
-        req = urllib.request.Request(f"{GRAPH}/{path}?{data}")
-    else:
-        req = urllib.request.Request(f"{GRAPH}/{path}", data=data.encode(), method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            return json.load(r)
-    except urllib.error.HTTPError as e:
-        sys.exit(f"ERRO API {path}: HTTP {e.code}: {e.read().decode('utf-8', 'replace')}")
-    except urllib.error.URLError as e:
-        sys.exit(f"ERRO rede {path}: {e}")
+
+    for tentativa in range(4):
+        if method == "GET":
+            req = urllib.request.Request(f"{GRAPH}/{path}?{data}")
+        else:
+            req = urllib.request.Request(f"{GRAPH}/{path}", data=data.encode(), method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=90) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            corpo = e.read().decode("utf-8", "replace")
+            transitorio = '"is_transient":true' in corpo.replace(" ", "") or e.code in (429, 500, 502, 503)
+            if not transitorio or tentativa == 3:
+                sys.exit(f"ERRO API {path}: HTTP {e.code}: {corpo}")
+            espera = 60 * (tentativa + 1)
+            print(f"API transitória ({e.code}) em {path}; nova tentativa em {espera}s.")
+            time.sleep(espera)
+        except urllib.error.URLError as e:
+            if tentativa == 3:
+                sys.exit(f"ERRO rede {path}: {e}")
+            print(f"Rede instável em {path} ({e}); nova tentativa em 30s.")
+            time.sleep(30)
 
 
 def story_publicado_hoje(today):
@@ -70,6 +88,42 @@ def story_publicado_hoje(today):
             continue
         if quando.strftime("%Y-%m-%d") == today:
             return item.get("id")
+    return None
+
+
+def ingerir(params):
+    """Cria o container e espera ficar FINISHED. Devolve o id, ou None.
+
+    O processamento de vídeo da Meta às vezes reporta ERROR transitório e
+    depois conclui (visto em 2026-07-19). Estratégia: por container, tolerar
+    ERROR por até 3min de poll extra; se persistir, criar container novo
+    (até 3 tentativas no total).
+    """
+    for attempt in range(1, 4):
+        container = call("POST", f"{IG_USER_ID}/media", params)
+        cid = container.get("id")
+        if not cid:
+            sys.exit(f"Container sem id: {container}")
+        print(f"Tentativa {attempt}: container {cid}")
+
+        # Poll a cada 10s, não 5s: 360 chamadas numa manhã ruim é o que faz o
+        # app bater no limite de requisições da Meta (visto em 2026-08-07).
+        error_polls = 0
+        for _ in range(60):  # até ~10min por tentativa
+            st = call("GET", cid, {"fields": "status_code"})
+            code = st.get("status_code")
+            if code == "FINISHED":
+                return cid
+            if code == "ERROR":
+                error_polls += 1
+                if error_polls >= 18:  # ERROR persistente por ~3min
+                    print(f"Container {cid} em ERROR persistente.")
+                    break
+            time.sleep(10)
+        if attempt < 3:
+            print("Aguardando 60s antes da próxima tentativa...")
+            time.sleep(60)
+    print("3 tentativas de container falharam (ERROR/timeout).")
     return None
 
 
@@ -126,46 +180,24 @@ def main():
         return
 
     print(f"Peça: {entry['reference']}  trilha: {entry['track']}")
-    if entry.get("video_url"):
-        params = {"media_type": "STORIES", "video_url": entry["video_url"]}
-        print("Formato: vídeo 59s com trilha")
-    else:
-        params = {"media_type": "STORIES", "image_url": entry["image_url"]}
-        print("Formato: imagem")
 
-    # O processamento de vídeo da Meta às vezes reporta ERROR transitório e
-    # depois conclui (visto em 2026-07-19). Estratégia: por container, tolerar
-    # ERROR por até 3min de poll extra; se persistir, criar container novo
-    # (até 3 tentativas no total).
     cid = None
-    for attempt in range(1, 4):
-        container = call("POST", f"{IG_USER_ID}/media", params)
-        cid = container.get("id")
-        if not cid:
-            sys.exit(f"Container sem id: {container}")
-        print(f"Tentativa {attempt}: container {cid}")
-
-        error_polls = 0
-        finished = False
-        for _ in range(120):  # até ~10min por tentativa
-            st = call("GET", cid, {"fields": "status_code"})
-            code = st.get("status_code")
-            if code == "FINISHED":
-                finished = True
-                break
-            if code == "ERROR":
-                error_polls += 1
-                if error_polls >= 36:  # ERROR persistente por ~3min
-                    print(f"Container {cid} em ERROR persistente.")
-                    break
-            time.sleep(5)
-        if finished:
-            break
-        if attempt < 3:
-            print("Aguardando 60s antes da próxima tentativa...")
-            time.sleep(60)
+    if entry.get("video_url"):
+        print("Formato: vídeo 59s com trilha")
+        cid = ingerir({"media_type": "STORIES", "video_url": entry["video_url"]})
+        if cid is None and entry.get("image_url"):
+            # Decisão do Jappa (2026-08-07): story sem trilha é melhor que
+            # série furada. O vídeo depende de a Meta conseguir baixar o MP4
+            # do Drive, que já falhou com o arquivo íntegro (o file id de
+            # 08/08 parou de servir). O PNG ingere em segundos e salva o dia.
+            print("FALLBACK: vídeo não ingeriu; publicando a imagem sem trilha.")
+            cid = ingerir({"media_type": "STORIES", "image_url": entry["image_url"]})
     else:
-        sys.exit("3 tentativas de container falharam (ERROR/timeout).")
+        print("Formato: imagem")
+        cid = ingerir({"media_type": "STORIES", "image_url": entry["image_url"]})
+
+    if cid is None:
+        sys.exit("Nenhum container ficou pronto (vídeo e imagem falharam).")
     print("Container FINISHED (Meta já baixou a mídia).")
 
     if DRY_RUN:
