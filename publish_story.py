@@ -65,8 +65,8 @@ def call(method, path, params):
             time.sleep(30)
 
 
-def story_publicado_hoje(today):
-    """Pergunta à própria API se já existe story publicado na data BRT de hoje.
+def story_publicado_hoje(today, published):
+    """Pergunta à própria API se a SÉRIE já foi publicada na data BRT de hoje.
 
     Guard real de idempotência. O fila/published.json sozinho não protege:
     o actions/checkout materializa o SHA do evento, então um run disparado
@@ -74,20 +74,31 @@ def story_publicado_hoje(today):
     registro que outro run acabou de commitar (foi o que duplicou o story de
     2026-08-07). O edge /stories lista os stories ativos das últimas 24h, que
     cobre com folga a janela dos 4 despertares.
+
+    Só conta como duplicata story que seja nosso, por um dos dois sinais:
+    id já registrado no published.json, ou publicado na janela em que só o bot
+    publica (05:28-05:40 BRT). Story que o Jappa posta na mão fora dessa janela
+    não é da série e não pode bloquear a publicação (foi o que segurou o story
+    de 2026-08-17: ele postou às 05:17 e o guard achou que era o da série).
     """
     try:
         r = call("GET", f"{IG_USER_ID}/stories", {"fields": "id,timestamp"})
     except SystemExit:
         print("AVISO: não deu pra consultar /stories; seguindo com o guard do arquivo.")
         return None
+    nossos = set(published.values())
     for item in r.get("data", []):
         ts = item.get("timestamp", "")
         try:
             quando = datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S%z").astimezone(BRT)
         except ValueError:
             continue
-        if quando.strftime("%Y-%m-%d") == today:
+        if quando.strftime("%Y-%m-%d") != today:
+            continue
+        na_janela = (quando.hour, quando.minute) >= (5, 28) and (quando.hour, quando.minute) <= (5, 40)
+        if item.get("id") in nossos or na_janela:
             return item.get("id")
+        print(f"Story de hoje às {quando:%H:%M} não é da série (postado na mão); seguindo.")
     return None
 
 
@@ -173,7 +184,7 @@ def main():
         print(f"Já publicado hoje (media_id {published[today]}). Nada a fazer.")
         return
 
-    ja = story_publicado_hoje(today)
+    ja = story_publicado_hoje(today, published)
     if ja:
         print(f"A API já tem story de hoje no ar (media_id {ja}). Registrando e saindo.")
         registrar(published, today, ja)
@@ -206,7 +217,7 @@ def main():
 
     # Segunda checagem colada no publish: a ingestão do vídeo leva minutos e
     # outro run pode ter publicado nesse intervalo.
-    ja = story_publicado_hoje(today)
+    ja = story_publicado_hoje(today, published)
     if ja:
         print(f"Outro run publicou durante a ingestão (media_id {ja}). Abortando publish.")
         registrar(published, today, ja)
