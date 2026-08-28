@@ -3,12 +3,28 @@ name: Publicar story Primeiro Deus
 on:
   schedule:
     # Repo público (cota ilimitada): despertares escalonados; o primeiro que acordar
-    # segura até as 05:30 BRT em ponto e publica; os demais dão skip idempotente.
-    # Atrasos de até ~3h do scheduler do GitHub ficam cobertos.
+    # segura até as 05:30 BRT em ponto e publica; os demais dão skip idempotente
+    # (~10s de runner quando o dia já está registrado).
+    #
+    # Os quatro primeiros são os despertares "no horário": acordam ANTES das
+    # 05:30 BRT e seguram até o alvo. Cobrem o atraso normal do scheduler do
+    # GitHub, que é de ~25 a 35min.
     - cron: "30 5 * * *"   # 05:30 UTC = 02:30 BRT
     - cron: "30 6 * * *"   # 06:30 UTC = 03:30 BRT
     - cron: "30 7 * * *"   # 07:30 UTC = 04:30 BRT
-    - cron: "0 9 * * *"    # 09:00 UTC = 06:00 BRT; rede de segurança final
+    - cron: "0 9 * * *"    # 09:00 UTC = 06:00 BRT
+    #
+    # Redes de segurança DEPOIS do alvo: publicam na hora, sem esperar. Existem
+    # porque em 27 e 28/08 o scheduler do GitHub entrou em backlog e não disparou
+    # NENHUM dos quatro de cima na janela da manhã (no dia 27 eles saíram ~11h
+    # atrasados, às 16h39-19h22 UTC). Quatro crons espremidos em 3h30 caem juntos
+    # quando a fila do scheduler atrasa; espalhar até o meio-dia BRT dá chances
+    # independentes de o story sair ainda de manhã em vez de à tarde ou nunca.
+    - cron: "30 9 * * *"   # 09:30 UTC = 06:30 BRT
+    - cron: "30 10 * * *"  # 10:30 UTC = 07:30 BRT
+    - cron: "30 11 * * *"  # 11:30 UTC = 08:30 BRT
+    - cron: "30 13 * * *"  # 13:30 UTC = 10:30 BRT
+    - cron: "30 15 * * *"  # 15:30 UTC = 12:30 BRT
   workflow_dispatch:
     inputs:
       dry_run:
