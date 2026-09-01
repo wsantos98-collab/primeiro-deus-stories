@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "descricao": "Banco de versiculos CNBB conferidos palavra a palavra na fonte oficial. O reabastecedor da sede consome daqui e NUNCA inventa nem cita de memoria.",
+    "fonte": "https://www.tuapalavra.com.br/pt-BR/CNBB/{Livro}/{capitulo}/{versiculo}",
+    "por_que_existe": "O tuapalavra esta atras de Cloudflare e bloqueia curl (403) e Playwright (headless e headed, inclusive no contexto grafico do launchd). A conferencia so passa em browser real com sessao interativa, que a sede nao tem. Entao a conferencia acontece em lote numa sessao com browser e a sede consome do banco.",
+    "regras_de_curadoria": [
+      "Temas permitidos: sabedoria, trabalho/diligencia, carater, descanso, gratidao, confianca, paciencia.",
+      "Proibido: prosperidade material, declarar vitoria, barganha com Deus.",
+      "Descartar versiculo que termina em virgula, dois-pontos ou ponto e virgula (continua no seguinte).",
+      "Descartar versiculo que comeca em minuscula (continuacao do anterior).",
+      "Descartar versiculo que abre aspa de discurso direto sem fechar no mesmo versiculo (quebra o par de aspas do template).",
+      "Normalizar SENHOR (versalete da CNBB) para Senhor. Remover o marcador tipografico e rubricas de cabecalho tipo [ De Davi. ].",
+      "Maiuscula reverencial em pronome de 3a pessoa que se refere a Deus ou a Jesus (Ele, Nele, Dele, Seu, Sua). Conferir o antecedente: pronome que se refere a outra coisa fica minusculo."
+    ],
+    "como_reabastecer": "Numa sessao com browser: abrir https://www.tuapalavra.com.br/pt-BR/CNBB/{Livro}/{capitulo} (capitulo inteiro rende dezenas de candidatos numa navegacao), esperar ~9s o desafio Cloudflare, extrair com get_page_text, aplicar as regras acima e acrescentar entradas com usado_em: null.",
+    "ultimo_abastecimento": "2026-08-31",
+    "capitulos_ja_varridos": ["Proverbios 16", "Proverbios 19", "Proverbios 27", "Salmos 37", "Romanos 12"]
+  },
+  "versiculos": [
+    {"ref": "Provérbios 16:8 · CNBB", "tema": "caráter", "texto": "Mais vale pouco com justiça, do que muitos lucros sem eqüidade.", "usado_em": null},
+    {"ref": "Provérbios 16:9 · CNBB", "tema": "confiança", "texto": "O coração humano projeta o caminho, mas é o Senhor quem dirige os passos.", "usado_em": null},
+    {"ref": "Provérbios 16:18 · CNBB", "tema": "caráter", "texto": "A soberba precede o abatimento; antes da queda, a arrogância.", "usado_em": null},
+    {"ref": "Provérbios 16:20 · CNBB", "tema": "confiança", "texto": "O instruído na palavra encontrará a felicidade; quem espera no Senhor, esse é feliz.", "usado_em": null},
+    {"ref": "Provérbios 16:21 · CNBB", "tema": "sabedoria", "texto": "Quem é sábio de coração será chamado prudente; palavras suaves aumentam a instrução.", "usado_em": null},
+    {"ref": "Provérbios 16:23 · CNBB", "tema": "sabedoria", "texto": "O coração do sábio ensina a sua boca e a seus lábios acrescenta a instrução.", "usado_em": null},
+    {"ref": "Provérbios 16:24 · CNBB", "tema": "caráter", "texto": "Palavras gentis são um favo de mel, doçura para a alma e saúde para o corpo.", "usado_em": null},
+    {"ref": "Provérbios 16:26 · CNBB", "tema": "trabalho", "texto": "Quem trabalha, trabalha para si porque a necessidade de comer o impele.", "usado_em": null},
+    {"ref": "Provérbios 16:31 · CNBB", "tema": "caráter", "texto": "Cabelos brancos são coroa de honra, a qual se encontra nos caminhos da justiça.", "usado_em": null},
+
+    {"ref": "Provérbios 19:2 · CNBB", "tema": "paciência", "texto": "Não é bom agir sem reflexão; quem anda apressado acaba tropeçando.", "usado_em": null},
+    {"ref": "Provérbios 19:8 · CNBB", "tema": "sabedoria", "texto": "Quem domina o coração, ama a si mesmo; e quem conserva a prudência, encontra a felicidade.", "usado_em": null},
+    {"ref": "Provérbios 19:11 · CNBB", "tema": "paciência", "texto": "O bom senso acalma a ira; é motivo de glória passar por cima das ofensas.", "usado_em": null},
+    {"ref": "Provérbios 19:15 · CNBB", "tema": "trabalho", "texto": "A preguiça traz a sonolência; o descuidado passa fome.", "usado_em": null},
+    {"ref": "Provérbios 19:16 · CNBB", "tema": "caráter", "texto": "Quem guarda o mandamento guarda a si mesmo; quem se descuida da própria conduta se destrói.", "usado_em": null},
+    {"ref": "Provérbios 19:20 · CNBB", "tema": "sabedoria", "texto": "Ouve o conselho e aceita a correção para que, no fim, te tornes sábio.", "usado_em": null},
+    {"ref": "Provérbios 19:22 · CNBB", "tema": "caráter", "texto": "O que se deseja em alguém é sua lealdade; é melhor o pobre que o mentiroso.", "usado_em": null},
+    {"ref": "Provérbios 19:25 · CNBB", "tema": "sabedoria", "texto": "Castigado o zombador, mesmo o ingênuo se torna mais sábio; se repreenderes o sábio, ele aceita a lição.", "usado_em": null},
+
+    {"ref": "Provérbios 27:1 · CNBB", "tema": "confiança", "texto": "Não te glories do dia de amanhã, pois não sabes o que o dia vindouro te vai trazer.", "usado_em": null},
+    {"ref": "Provérbios 27:2 · CNBB", "tema": "caráter", "texto": "Louve-te um outro e não a tua boca; um estranho, e não teus lábios.", "usado_em": null},
+    {"ref": "Provérbios 27:5 · CNBB", "tema": "caráter", "texto": "É melhor a repreensão aberta do que o amor escondido.", "usado_em": null},
+    {"ref": "Provérbios 27:9 · CNBB", "tema": "caráter", "texto": "O coração se deleita com o óleo e o incenso, e com a doçura do amigo, num conselho cordial.", "usado_em": null},
+    {"ref": "Provérbios 27:12 · CNBB", "tema": "sabedoria", "texto": "Quem é prudente vê o perigo e se esconde; os ingênuos vão adiante e são castigados.", "usado_em": null},
+    {"ref": "Provérbios 27:17 · CNBB", "tema": "caráter", "texto": "Ferro se afia com ferro: assim o amigo, com a presença do amigo.", "usado_em": null},
+    {"ref": "Provérbios 27:18 · CNBB", "tema": "trabalho", "texto": "Quem cuida da sua figueira comerá de seus frutos; quem vela por seu senhor, por ele será honrado.", "usado_em": null},
+    {"ref": "Provérbios 27:19 · CNBB", "tema": "caráter", "texto": "Como o rosto se reflete na água, assim o coração de um se reflete no do outro.", "usado_em": null},
+    {"ref": "Provérbios 27:21 · CNBB", "tema": "caráter", "texto": "Como se testa a prata no crisol e o ouro, na fornalha, assim se prova a pessoa pela boca de quem a louva.", "usado_em": null},
+
+    {"ref": "Salmos 37:3 · CNBB", "tema": "confiança", "texto": "Espera no Senhor e faze o bem: assim permanecerás na terra e terás segurança.", "usado_em": null},
+    {"ref": "Salmos 37:5 · CNBB", "tema": "confiança", "texto": "Entrega ao Senhor o teu futuro, espera Nele, que Ele vai agir.", "usado_em": null},
+    {"ref": "Salmos 37:7 · CNBB", "tema": "descanso", "texto": "Descansa no Senhor e Nele espera. Não te irrites por causa dos que prosperam, por causa do homem intrigante.", "usado_em": null},
+    {"ref": "Salmos 37:16 · CNBB", "tema": "caráter", "texto": "Mais vale o pouco que tem o justo do que a abundância dos ímpios.", "usado_em": null},
+    {"ref": "Salmos 121:2 · CNBB", "tema": "confiança", "texto": "Meu auxílio vem do Senhor, que fez o céu e a terra.", "usado_em": null},
+
+    {"ref": "Romanos 12:9 · CNBB", "tema": "caráter", "texto": "O amor seja sincero. Detestai o mal, apegai-vos ao bem.", "usado_em": null},
+    {"ref": "Romanos 12:10 · CNBB", "tema": "caráter", "texto": "Que o amor fraterno vos una uns aos outros, com terna afeição, rivalizando-vos em atenções recíprocas.", "usado_em": null},
+    {"ref": "Romanos 12:15 · CNBB", "tema": "caráter", "texto": "Alegrai-vos com os que se alegram, chorai com os que choram.", "usado_em": null},
+    {"ref": "Romanos 12:16 · CNBB", "tema": "caráter", "texto": "Mantende um bom entendimento uns com os outros; não sejais pretensiosos, mas acomodai-vos às coisas humildes. Não vos considereis sábios aos próprios olhos.", "usado_em": null},
+    {"ref": "Romanos 12:17 · CNBB", "tema": "caráter", "texto": "A ninguém pagueis o mal com o mal. Empenhai-vos em fazer o bem diante de todos.", "usado_em": null},
+    {"ref": "Romanos 12:18 · CNBB", "tema": "caráter", "texto": "Na medida do possível e enquanto depender de vós, vivei em paz com todos.", "usado_em": null},
+
+    {"ref": "Provérbios 18:12 · CNBB", "tema": "caráter", "texto": "Antes da queda, a pessoa se exalta; antes de ser glorificada, se humilha.", "usado_em": null},
+    {"ref": "2 Timóteo 1:7 · CNBB", "tema": "caráter", "texto": "Pois Deus não nos deu um espírito de covardia, mas de força, de amor e de moderação.", "usado_em": null},
+    {"ref": "Tiago 4:17 · CNBB", "tema": "caráter", "texto": "Quem, pois, sabe fazer o bem e não o faz é réu de pecado.", "usado_em": null}
+  ]
+}
