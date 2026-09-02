@@ -2,13 +2,31 @@ name: Publicar story Primeiro Deus
 
 on:
   schedule:
-    # Repo público (cota ilimitada): despertares escalonados; o primeiro que acordar
-    # segura até as 05:30 BRT em ponto e publica; os demais dão skip idempotente.
-    # Atrasos de até ~3h do scheduler do GitHub ficam cobertos.
-    - cron: "30 5 * * *"   # 05:30 UTC = 02:30 BRT
-    - cron: "30 6 * * *"   # 06:30 UTC = 03:30 BRT
-    - cron: "30 7 * * *"   # 07:30 UTC = 04:30 BRT
-    - cron: "0 9 * * *"    # 09:00 UTC = 06:00 BRT; rede de segurança final
+    # O scheduler do GitHub é best-effort e vinha entregando estes eventos com
+    # 25-35min de atraso até 25/08. De 26/08 em diante o atraso pulou pra 5-12h
+    # e em 27/08 e 02/09 nenhum evento chegou na janela da manhã — a série só
+    # não furou porque o Jappa disparou na mão. A defesa é dupla:
+    #
+    # 1. Minuto fora de :00/:30. Esses são os minutos mais concorridos da fila
+    #    do GitHub; qualquer outro minuto é servido antes.
+    # 2. Despertares espalhados pelo dia inteiro, não só na madrugada. Quem
+    #    acordar dentro da janela de sono (até 3h30 antes das 05:30 BRT) segura
+    #    e publica no horário; quem acordar depois publica na hora (atrasado,
+    #    mas publica); quem acordar cedo demais sai limpo em segundos. Todos
+    #    são idempotentes, então sobra é barato e falta é que dói.
+    - cron: "17 3 * * *"    # 00:17 BRT — bilhete de loteria: só serve se atrasar
+    - cron: "17 4 * * *"    # 01:17 BRT — idem
+    - cron: "17 5 * * *"    # 02:17 BRT — dorme 3h13 e publica às 05:30 BRT
+    - cron: "17 6 * * *"    # 03:17 BRT — dorme 2h13
+    - cron: "17 7 * * *"    # 04:17 BRT — dorme 1h13
+    - cron: "17 8 * * *"    # 05:17 BRT — dorme 13min
+    - cron: "17 9 * * *"    # 06:17 BRT — daqui pra baixo é resgate: publica na hora
+    - cron: "17 10 * * *"   # 07:17 BRT
+    - cron: "47 11 * * *"   # 08:47 BRT
+    - cron: "47 13 * * *"   # 10:47 BRT
+    - cron: "47 15 * * *"   # 12:47 BRT
+    - cron: "47 17 * * *"   # 14:47 BRT
+    - cron: "47 20 * * *"   # 17:47 BRT — última chance do dia
   workflow_dispatch:
     inputs:
       dry_run:
@@ -24,7 +42,7 @@ concurrency: publicar-story
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    timeout-minutes: 200
+    timeout-minutes: 230
     steps:
       # ref: main é obrigatório. Sem isso o checkout materializa o SHA do
       # EVENTO, e um despertar disparado antes das 05:30 BRT lê um

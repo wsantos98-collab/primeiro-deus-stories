@@ -2,9 +2,15 @@
 # -*- coding: utf-8 -*-
 """Publica o story diário da série "Primeiro Deus" no @gestao.wellingtonjappa.
 
-Roda no GitHub Actions (cron 09:30 UTC = 6h30 BRT). Lê fila/manifest.json,
-acha a peça do dia (data em America/Sao_Paulo, UTC-3 fixo), cria o container
-STORIES na Content Publishing API apontando pra URL pública do Drive e publica.
+Roda no GitHub Actions, alvo 5h30 BRT. Lê fila/manifest.json, acha a peça do
+dia (data em America/Sao_Paulo, UTC-3 fixo), cria o container STORIES na
+Content Publishing API apontando pra URL pública do Drive e publica.
+
+O scheduler do GitHub é best-effort: os despertares chegam atrasados (25min
+num dia bom, 5-12h desde 26/08/2026) e às vezes não chegam. Por isso o
+workflow tem uma dúzia de crons espalhados pelo dia e este script decide o que
+fazer com o horário que recebeu: dormir até o alvo, publicar atrasado, ou sair
+limpo. Ver TETO_SONO e LIMITE_NOITE.
 
 Idempotente: fila/published.json guarda as datas já publicadas; o workflow
 commita esse arquivo de volta. DRY_RUN=true valida a ingestão (container até
@@ -28,6 +34,15 @@ BRT = timezone(timedelta(hours=-3))
 
 TOKEN = os.environ.get("IG_TOKEN", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN", "false").strip().lower() == "true"
+
+# Quanto um despertar aceita dormir esperando o alvo. Segurar o runner por mais
+# que isso tranca o grupo de concorrência e mata os despertares seguintes, que
+# são justamente a rede contra o atraso do scheduler.
+TETO_SONO = 3.5 * 3600
+
+# Depois desta hora (BRT) o dia está perdido: um story "Primeiro Deus" às 22h
+# não é a série, é ruído. Melhor falhar alto (e-mail do GitHub) do que postar.
+LIMITE_NOITE = 20
 
 
 def call(method, path, params):
@@ -73,7 +88,7 @@ def story_publicado_hoje(today, published):
     ANTES da publicação lê um published.json congelado e não enxerga o
     registro que outro run acabou de commitar (foi o que duplicou o story de
     2026-08-07). O edge /stories lista os stories ativos das últimas 24h, que
-    cobre com folga a janela dos 4 despertares.
+    cobre com folga a janela dos despertares do dia.
 
     Só conta como duplicata story que seja nosso, por um dos dois sinais:
     id já registrado no published.json, ou publicado na janela em que só o bot
@@ -153,18 +168,32 @@ def main():
     if not TOKEN:
         sys.exit("IG_TOKEN ausente.")
 
-    # Runs agendadas acordam ~40min antes e seguram até as 5h30 BRT em ponto
-    # (o atraso do scheduler do GitHub cai dentro dessa folga). Runs manuais
+    # Runs agendadas seguram até as 5h30 BRT em ponto. Runs manuais
     # (workflow_dispatch) publicam imediatamente.
     if os.environ.get("WAIT_FOR_TARGET", "false").strip().lower() == "true":
-        now = datetime.now(BRT)
-        target = now.replace(hour=5, minute=30, second=0, microsecond=0)
-        wait = (target - now).total_seconds()
-        if wait > 0:
-            print(f"Aguardando {int(wait)}s até as 05:30 BRT...")
-            time.sleep(wait)
+        agora = datetime.now(BRT)
+        alvo = agora.replace(hour=5, minute=30, second=0, microsecond=0)
+        espera = (alvo - agora).total_seconds()
+        if espera > TETO_SONO:
+            print(
+                f"Acordou {espera / 3600:.1f}h antes do alvo, acima do teto de sono "
+                f"({TETO_SONO / 3600:.1f}h). Saindo limpo: esperar tanto tempo "
+                f"trancaria o grupo de concorrência. Este despertar só serve se o "
+                f"scheduler o atrasar pra dentro da janela."
+            )
+            return
+        if espera > 0:
+            with open("fila/published.json", encoding="utf-8") as f:
+                if agora.strftime("%Y-%m-%d") in json.load(f):
+                    print("Story de hoje já registrado; não vou dormir até o alvo.")
+                    return
+            print(f"Aguardando {int(espera)}s até as 05:30 BRT...")
+            time.sleep(espera)
         else:
-            print("Já passou das 05:30 BRT; publicando imediatamente.")
+            print(
+                f"Alvo das 05:30 BRT já passou há {-espera / 3600:.1f}h "
+                f"(atraso do scheduler); publicando agora, em resgate."
+            )
 
     today = datetime.now(BRT).strftime("%Y-%m-%d")
     print(f"Data (BRT): {today}  dry_run={DRY_RUN}")
@@ -183,6 +212,14 @@ def main():
     if today in published:
         print(f"Já publicado hoje (media_id {published[today]}). Nada a fazer.")
         return
+
+    agora = datetime.now(BRT)
+    if agora.hour >= LIMITE_NOITE:
+        sys.exit(
+            f"TARDE DEMAIS: {agora:%H:%M} BRT e o story de {today} não saiu. Nenhum "
+            f"despertar chegou a tempo hoje (scheduler do GitHub). A peça fica na "
+            f"fila sem uso; publicar na mão amanhã cedo se valer a pena."
+        )
 
     ja = story_publicado_hoje(today, published)
     if ja:
