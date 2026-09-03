@@ -77,7 +77,8 @@ def story_publicado_hoje(today, published):
 
     Só conta como duplicata story que seja nosso, por um dos dois sinais:
     id já registrado no published.json, ou publicado na janela em que só o bot
-    publica (05:28-05:40 BRT). Story que o Jappa posta na mão fora dessa janela
+    publica (05:28-05:44 BRT; a garantia da sede parte às 05:35 e pode levar
+    alguns minutos de ingestão do vídeo, por isso a janela vai até 05:44). Story que o Jappa posta na mão fora dessa janela
     não é da série e não pode bloquear a publicação (foi o que segurou o story
     de 2026-08-17: ele postou às 05:17 e o guard achou que era o da série).
     """
@@ -95,7 +96,7 @@ def story_publicado_hoje(today, published):
             continue
         if quando.strftime("%Y-%m-%d") != today:
             continue
-        na_janela = (quando.hour, quando.minute) >= (5, 28) and (quando.hour, quando.minute) <= (5, 40)
+        na_janela = (quando.hour, quando.minute) >= (5, 28) and (quando.hour, quando.minute) < (5, 45)
         if item.get("id") in nossos or na_janela:
             return item.get("id")
         print(f"Story de hoje às {quando:%H:%M} não é da série (postado na mão); seguindo.")
