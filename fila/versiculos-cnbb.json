@@ -20,7 +20,8 @@
    "Proverbios 27",
    "Salmos 37",
    "Romanos 12"
-  ]
+  ],
+  "regra_de_selecao_2026_09_21": "Regra do Jappa (21/09/2026): só Provérbios, capítulo = dia do mês. Primeira leva (22/09 a 21/10/2026): versículo = dia também (campo `dia`). Capítulo 29 tem 27 versículos: no dia 29 sortear um do capítulo 29 não usado. Depois da primeira leva: capítulo = dia, versículo sorteado entre os não usados do capítulo. Versículo que termina em vírgula/dois-pontos vira par com o seguinte (ex.: 22:22-23). Texto conferido no tuapalavra em sessão com browser real do Jappa (Cloudflare libera na sessão dele)."
  },
  "versiculos": [
   {
@@ -45,7 +46,7 @@
    "ref": "Provérbios 16:20 · CNBB",
    "tema": "confiança",
    "texto": "O instruído na palavra encontrará a felicidade; quem espera no Senhor, esse é feliz.",
-   "usado_em": "2026-09-24"
+   "usado_em": null
   },
   {
    "ref": "Provérbios 16:21 · CNBB",
@@ -141,7 +142,7 @@
    "ref": "Provérbios 27:5 · CNBB",
    "tema": "caráter",
    "texto": "É melhor a repreensão aberta do que o amor escondido.",
-   "usado_em": "2026-09-23"
+   "usado_em": null
   },
   {
    "ref": "Provérbios 27:9 · CNBB",
@@ -262,6 +263,35 @@
    "tema": "caráter",
    "texto": "Quem, pois, sabe fazer o bem e não o faz é réu de pecado.",
    "usado_em": null
+  },
+  {
+   "ref": "Provérbios 21:21 · CNBB",
+   "texto": "Quem segue a justiça e a misericórdia encontrará vida, justiça e glória.",
+   "tema": "caráter",
+   "usado_em": null,
+   "dia": 21
+  },
+  {
+   "ref": "Provérbios 22:22-23 · CNBB",
+   "texto": "Não faças violência ao pobre por ser pobre, nem oprimas o indigente no tribunal, porque o Senhor assumirá a causa deles e tirará a vida aos que os roubam.",
+   "tema": "caráter",
+   "usado_em": null,
+   "dia": 22,
+   "nota": "22:22 termina em vírgula; o par 22-23 fecha a frase"
+  },
+  {
+   "ref": "Provérbios 23:23 · CNBB",
+   "texto": "Adquire a verdade mas não a vendas; adquire a sabedoria, a instrução e o entendimento.",
+   "tema": "sabedoria",
+   "usado_em": "2026-09-23",
+   "dia": 23
+  },
+  {
+   "ref": "Provérbios 24:24 · CNBB",
+   "texto": "Quem diz ao ímpio: “Tu és justo!”, as pessoas o maldirão e a nação o detestará.",
+   "tema": "caráter",
+   "usado_em": "2026-09-24",
+   "dia": 24
   }
  ]
 }

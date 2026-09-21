@@ -1,0 +1,44 @@
+{
+ "carrossel_id": "jappa-primeiro-deus-semana10b",
+ "format": "story",
+ "author": {
+  "name": "Wellington Jappa",
+  "tagline": "O Gestor Operador",
+  "handle": "@gestao.wellingtonjappa"
+ },
+ "slides": [
+  {
+   "type": "story-versiculo",
+   "date": "2026-09-22",
+   "date_br": "22.09.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p4-cume.png",
+   "verse": "Não faças violência ao pobre por ser pobre, nem oprimas o indigente no tribunal, porque o Senhor assumirá a causa deles e tirará a vida aos que os roubam.",
+   "reflection": "Nasci em bairro pobre, filho de mãe solteira. Ser pobre eu vivi na pele, e isso é bem mais do que sentir. Não me impediu de evoluir, e me ensinou o que faço questão de manter, tratar todo mundo com a mesma atenção e o mesmo respeito, tenha o que tiver. Você trata igual quem não pode te devolver nada?",
+   "reference": "Provérbios 22:22-23 · CNBB",
+   "track": "Christian Piano Worship Calm Soaking Prayer (Pixabay)",
+   "source": "história real do Jappa (memória user_jappa_fe_e_vocabulario, 21/09/2026)"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-09-23",
+   "date_br": "23.09.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p5-cruz-sol.png",
+   "verse": "Adquire a verdade mas não a vendas; adquire a sabedoria, a instrução e o entendimento.",
+   "reflection": "A frase que rege minhas decisões começa com honrar a Deus, e não existe honrar sem verdade. O versículo manda adquirir a verdade e não vender, e a venda quase nunca é por dinheiro, é por um elogio, um contrato ou uma discussão que a gente quer ganhar. Qual verdade você está tentado a vender hoje?",
+   "reference": "Provérbios 23:23 · CNBB",
+   "track": "Worship Piano Instrumental Peaceful Prayer (Pixabay)",
+   "source": "06_Pessoal/proposito-pessoal.md"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-09-24",
+   "date_br": "24.09.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p1-mirante.png",
+   "verse": "Quem diz ao ímpio: “Tu és justo!”, as pessoas o maldirão e a nação o detestará.",
+   "reflection": "Tem um jeito de mentir que não usa palavra falsa, é chamar de justo o que a gente sabe que é errado, pra manter a paz. O versículo diz que essa paz custa o respeito de todo mundo. Misericórdia inclui a verdade. Onde você está chamando de certo o que é errado pra não perder alguém?",
+   "reference": "Provérbios 24:24 · CNBB",
+   "track": "Instrumental Piano Christian Worship of Jesus (Pixabay)",
+   "source": "versiculo"
+  }
+ ]
+}
