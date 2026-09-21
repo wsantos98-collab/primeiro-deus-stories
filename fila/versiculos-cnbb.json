@@ -244,7 +244,7 @@
    "ref": "Romanos 12:18 · CNBB",
    "tema": "caráter",
    "texto": "Na medida do possível e enquanto depender de vós, vivei em paz com todos.",
-   "usado_em": "2026-09-25"
+   "usado_em": null
   },
   {
    "ref": "Provérbios 18:12 · CNBB",
@@ -292,6 +292,55 @@
    "tema": "caráter",
    "usado_em": "2026-09-24",
    "dia": 24
+  },
+  {
+   "ref": "Provérbios 25:25 · CNBB",
+   "texto": "Água fresca para quem tem sede, assim é a boa notícia que vem de longe.",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-09-25",
+   "dia": 25
+  },
+  {
+   "ref": "Provérbios 26:26 · CNBB",
+   "texto": "dissimulará o ódio enganosamente, mas a sua malícia será revelada na assembléia.",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-09-26",
+   "dia": 26
+  },
+  {
+   "ref": "Provérbios 27:27 · CNBB",
+   "texto": "baste o leite das cabras para teu sustento, para o sustento de tua família e para a manutenção de tuas servas.",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-09-27",
+   "dia": 27
+  },
+  {
+   "ref": "Provérbios 28:28 · CNBB",
+   "texto": "Quando se levantam os ímpios, todos se escondem; quando perecem, multiplicam-se os justos.",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-09-28",
+   "dia": 28
+  },
+  {
+   "ref": "Provérbios 29:25 · CNBB",
+   "texto": "O respeito humano arma ciladas; quem espera no Senhor, porém, será defendido.",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-09-29",
+   "dia": 29
+  },
+  {
+   "ref": "Provérbios 30:30 · CNBB",
+   "texto": "o leão, o mais valente dos animais, que não tem medo de ninguém;",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-09-30",
+   "dia": 30
+  },
+  {
+   "ref": "Provérbios 1:1-2 · CNBB",
+   "texto": "Provérbios de Salomão, filho de Davi, rei de Israel: para conhecer a sabedoria e a disciplina, para entender as sentenças da prudência,",
+   "tema": "proverbios-dia",
+   "usado_em": "2026-10-01",
+   "dia": 1
   }
  ]
 }
