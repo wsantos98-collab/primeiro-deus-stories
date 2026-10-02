@@ -1,0 +1,95 @@
+{
+  "carrossel_id": "jappa-primeiro-deus-semana12",
+  "format": "story",
+  "author": {
+    "name": "Wellington Jappa",
+    "tagline": "O Gestor Operador",
+    "handle": "@gestao.wellingtonjappa"
+  },
+  "slides": [
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-02",
+      "date_br": "02.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p4-cume.png",
+      "verse": "Então conhecerás a justiça e o direito, a eqüidade e todo bom caminho, porque a Sabedoria entrará no teu coração e o conhecimento será o teu prazer.",
+      "reflection": "O versículo começa com ‘então’, e esse então depende de procurar a Sabedoria como quem procura um tesouro. Por muito tempo eu quis saber o caminho certo sem fazer a busca. Hoje vejo que o conhecimento só vira prazer depois que entra no coração. Quanto tempo você deu pra procurar hoje?",
+      "reference": "Provérbios 2:9-10 · CNBB",
+      "track": "Prayer Worship Piano Grateful Merciful (Pixabay)",
+      "source": "versiculo",
+      "track_file": "sex.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-03",
+      "date_br": "03.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p5-cruz-sol.png",
+      "verse": "A misericórdia e a verdade não te abandonem: ata-as ao teu pescoço, inscreve-as nas tábuas do teu coração, e alcançarás graça e bom sucesso diante de Deus e dos outros.",
+      "reflection": "Ata no pescoço e inscreve no coração são duas coisas. Uma anda com você onde todo mundo vê, a outra é quem você é quando não tem ninguém olhando. Já me peguei cuidando mais da primeira. Misericórdia e verdade juntas, sem escolher uma. Qual das duas você tem deixado cair?",
+      "reference": "Provérbios 3:3-4 · CNBB",
+      "track": "Peaceful Piano Worship Gratitude Hope (Pixabay)",
+      "source": "versiculo",
+      "track_file": "sab.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-04",
+      "date_br": "04.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p1-mirante.png",
+      "verse": "Ele me ensinava e dizia: ‘Teu coração acolha as minhas palavras, guarda meus preceitos, e viverás.’",
+      "reflection": "Quem ensina aqui é um pai, e pede ao filho que acolha. Ouvi na igreja no domingo que, na parábola dos dois filhos, Jesus troca patrão por Pai, e chamar de filho vem antes de mandar trabalhar na vinha. Um prometeu e não foi, o outro resmungou e foi. O que você vai fazer hoje?",
+      "reference": "Provérbios 4:4 · CNBB",
+      "track": "Morning Worship (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-09-27-missa-o-pai-tinha-dois-filhos.md",
+      "track_file": "dom.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-05",
+      "date_br": "05.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p2-jiujitsu.png",
+      "verse": "Seus pés descem para a morte, para o Abismo tendem os seus passos: como não segue a vereda da vida, seus passos são inseguros, e ela própria não sabe.",
+      "reflection": "Tem caminho que começa doce e vai amargando sem avisar. O versículo diz que os passos ficam inseguros e que ela própria não sabe. Essa é a parte pesada, descer sem perceber que está descendo. Quando eu paro, quase sempre já andei um pedaço. Você tem parado pra olhar onde seus pés estão?",
+      "reference": "Provérbios 5:5-6 · CNBB",
+      "track": "Beautiful Worship Piano Peaceful Music (Pixabay)",
+      "source": "versiculo",
+      "track_file": "seg.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-06",
+      "date_br": "06.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p3-trilha.png",
+      "verse": "Ela, embora não tenha chefe, nem vigilante, nem príncipe, prepara seu alimento no verão e ajunta, no tempo da ceifa, a sua comida.",
+      "reflection": "Já preguei sobre esta passagem num devocional de madrugada dos Legendários. Falei da formiga que trabalha sem chefe e prepara no verão o que come no inverno. Admiti também as minhas três tentativas de aula de violão, começadas e paradas. Fechei com uma conclusão, fazer menos coisas e terminar. O que você precisa terminar?",
+      "reference": "Provérbios 6:7-8 · CNBB",
+      "track": "Christian Piano Worship Calm Soaking Prayer (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-07-21-devocional-top-1644-formiga.md",
+      "track_file": "ter.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-07",
+      "date_br": "07.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p4-cume.png",
+      "verse": "Estava eu à janela de minha casa quando, olhando pelas grades, observei, entre os ingênuos, entre os adolescentes, um jovem insensato.",
+      "reflection": "O autor está na janela, olhando pelas grades, e vê um jovem que não vê nada. Da janela a visão é outra, dá tempo de enxergar o que na rua passa batido. Eu já desprezei conselho de quem estava na janela por achar que sabia o caminho. Quem você tem deixado de ouvir?",
+      "reference": "Provérbios 7:6-7 · CNBB",
+      "track": "Worship Piano Instrumental Peaceful Prayer (Pixabay)",
+      "source": "versiculo",
+      "track_file": "qua.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-08",
+      "date_br": "08.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p5-cruz-sol.png",
+      "verse": "Todas as sentenças de minha boca são justas, nelas não há nada de tortuoso ou perverso; são todas leais para os que têm inteligência e retas, para quem encontrou o conhecimento.",
+      "reflection": "A Sabedoria fala dela mesma, nada torto, nada perverso no que ela diz. Se o conselho chegou torto, o torto entrou na tradução, quando eu ajusto o que ouvi até caber no que eu já tinha decidido. Reto é como o texto chega em quem procura conhecimento. Você quer entender ou quer ter razão?",
+      "reference": "Provérbios 8:8-9 · CNBB",
+      "track": "Instrumental Piano Christian Worship of Jesus (Pixabay)",
+      "source": "versiculo",
+      "track_file": "qui.mp3"
+    }
+  ]
+}
