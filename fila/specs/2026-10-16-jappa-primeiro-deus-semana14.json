@@ -1,0 +1,95 @@
+{
+  "carrossel_id": "jappa-primeiro-deus-semana14",
+  "format": "story",
+  "author": {
+    "name": "Wellington Jappa",
+    "tagline": "O Gestor Operador",
+    "handle": "@gestao.wellingtonjappa"
+  },
+  "slides": [
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-16",
+      "date_br": "16.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p3-trilha.png",
+      "verse": "Quão melhor é possuir a Sabedoria do que o ouro, e adquirir a prudência, mais precioso do que a prata.",
+      "reflection": "Durante anos eu media ganho em prata, no quanto entrava por dia. O provérbio diz que a Sabedoria vale mais que o ouro. Ouvi numa pregação sobre os trabalhadores da vinha que a prata daquele tempo dava o sustento de um dia só, e que Deus promete Ele mesmo. Você busca Deus por quê?",
+      "reference": "Provérbios 16:16 · CNBB",
+      "track": "Prayer Worship Piano Grateful Merciful (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-09-20-missa-os-ultimos-serao-os-primeiros.md",
+      "track_file": "sex.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-17",
+      "date_br": "17.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p4-cume.png",
+      "verse": "O amigo é carinhoso em qualquer tempo; o irmão nasce para o dia da desgraça.",
+      "reflection": "Irmão nasce para o dia da desgraça. Eu media amizade pela conversa boa. Num devocional de madrugada dos Legendários, paramos a palavra para orar por uma menina que se acidentou, filha de um homem que faltou. Hoje vejo que cuidar de quem não chegou é parte da devoção. Quem ora por você quando você falta?",
+      "reference": "Provérbios 17:17 · CNBB",
+      "track": "Peaceful Piano Worship Gratitude Hope (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-08-06-devocional-top-1644-vida-eterna.md",
+      "track_file": "sab.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-18",
+      "date_br": "18.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p5-cruz-sol.png",
+      "verse": "Tirar a sorte amaina as discussões e decide a causa, até entre os poderosos.",
+      "reflection": "Já estiquei discussão sabendo que tinha razão, só para não aceitar critério que não fosse o meu. Está escrito que tirar a sorte amaina as discussões até entre os poderosos. Força costuma preferir continuar discutindo. Hoje aceito um critério de fora e durmo melhor. Qual discussão sua já poderia ter acabado?",
+      "reference": "Provérbios 18:18 · CNBB",
+      "track": "Morning Worship (Pixabay)",
+      "source": "versiculo",
+      "track_file": "dom.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-19",
+      "date_br": "19.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p1-mirante.png",
+      "verse": "Quem é impaciente, que sofra as conseqüências; se quiseres isentá-lo, tu o incitas a recomeçar.",
+      "reflection": "Socorrer quem eu amo sempre me pareceu amor. Paguei a conta, poupei a dor, e logo estava tudo igual outra vez. A leitura de hoje avisa que isentar o impaciente o incita a recomeçar. Hoje oro pedindo coragem de deixar a lição chegar inteira. De quem você está tirando o aprendizado?",
+      "reference": "Provérbios 19:19 · CNBB",
+      "track": "Beautiful Worship Piano Peaceful Music (Pixabay)",
+      "source": "versiculo",
+      "track_file": "seg.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-20",
+      "date_br": "20.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p2-jiujitsu.png",
+      "verse": "Quem amaldiçoa o pai e a mãe, a sua lâmpada se apagará em meio às trevas.",
+      "reflection": "Quem amaldiçoa pai e mãe vê a própria lâmpada apagar no escuro. Já recebi conselho de mãe com pressa, como se o aviso atrasasse meu dia. Ouvi na igreja, na festa de Nossa Senhora Aparecida, que em Caná Maria só apontou a falta do vinho a quem podia agir. Você tem ouvido sua mãe?",
+      "reference": "Provérbios 20:20 · CNBB",
+      "track": "Christian Piano Worship Calm Soaking Prayer (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-10-11-missa-nossa-senhora-aparecida.md",
+      "track_file": "ter.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-21",
+      "date_br": "21.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p3-trilha.png",
+      "verse": "Quem segue a justiça e a misericórdia encontrará vida, justiça e glória.",
+      "reflection": "Numa pregação da Assunção ouvi que Maria acreditou trinta anos no escondimento de Nazaré, sem um milagre confirmando, e continuou acreditando na paixão. Eu cobrava sinal antes de seguir. A palavra de hoje promete vida a quem segue justiça e misericórdia. Hoje caminho mesmo quando nada confirma. Você precisa de sinal para obedecer?",
+      "reference": "Provérbios 21:21 · CNBB",
+      "track": "Worship Piano Instrumental Peaceful Prayer (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-08-16-missa-assuncao-de-nossa-senhora.md",
+      "track_file": "qua.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-22",
+      "date_br": "22.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/p4-cume.png",
+      "verse": "Expulsa o zombador, e com ele sairá a contenda; e cessarão as demandas e ofensas.",
+      "reflection": "Guardei rancor por anos achando que castigava o outro. O texto manda expulsar o zombador, e com ele sai a contenda. Ouvi numa pregação sobre perdoar setenta vezes sete que o ódio machuca primeiro quem o sente, tira o sono, estraga a oração, endurece a gente em casa. Que nome você ainda carrega?",
+      "reference": "Provérbios 22:10 · CNBB",
+      "track": "Instrumental Piano Christian Worship of Jesus (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-09-13-missa-perdoar-setenta-vezes-sete.md",
+      "track_file": "qui.mp3"
+    }
+  ]
+}
