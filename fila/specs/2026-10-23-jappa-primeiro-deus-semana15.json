@@ -1,0 +1,95 @@
+{
+ "carrossel_id": "jappa-primeiro-deus-semana15",
+ "format": "story",
+ "author": {
+  "name": "Wellington Jappa",
+  "tagline": "O Gestor Operador",
+  "handle": "@gestao.wellingtonjappa"
+ },
+ "slides": [
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-23",
+   "date_br": "23.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q5-campo-trilha.png",
+   "verse": "Aplica teu coração ao ensino e teus ouvidos às palavras que trazem conhecimento.",
+   "reflection": "Aprender de verdade é escutar e depois fazer. Já me aconteceu de lembrar de alguém, pensar em ligar e deixar pra depois. Antes eu achava que a boa intenção já valia. Hoje eu sei que vale o que a gente faz. Pra quem você está devendo uma ligação?",
+   "reference": "Provérbios 23:12 · CNBB",
+   "track": "Prayer Worship Piano Grateful Merciful (Pixabay)",
+   "source": "06_Pessoal/Reuniões/2026-10-19-devocional-top-1841-sensiveis-a-deus-atentos-as-pessoas.md",
+   "track_file": "sex.mp3"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-24",
+   "date_br": "24.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q6-jardim-deck.png",
+   "verse": "Com a Sabedoria constrói-se a casa e com a prudência ela se consolida.",
+   "reflection": "Casa firme se constrói com juízo no dia a dia. Numa pregação contaram de um homem que passou um ano olhando a vida de um cristão antes de aceitar convite pra igreja. Eu já falei bonito e chegava em casa outro. E dentro da sua casa?",
+   "reference": "Provérbios 24:3 · CNBB",
+   "track": "Peaceful Piano Worship Gratitude Hope (Pixabay)",
+   "source": "06_Pessoal/Reuniões/2026-10-15-devocional-top-1841-evangelho-que-confirma-a-presenca.md",
+   "track_file": "sab.mp3"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-25",
+   "date_br": "25.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q7-campo-passada.png",
+   "verse": "Nuvens e vento, e chuvas que não vêm, tal é aquele que se gloria, mas não cumpre as promessas.",
+   "reflection": "Prometer e não entregar é igual nuvem carregada que passa e não molha nada. Na igreja ouvi a história do pai que mandou os dois filhos trabalhar na vinha. Um reclamou e foi. O outro disse sim e ficou. Eu já fui o segundo. Que promessa sua está parada?",
+   "reference": "Provérbios 25:14 · CNBB",
+   "track": "Morning Worship (Pixabay)",
+   "source": "06_Pessoal/Reuniões/2026-09-27-missa-o-pai-tinha-dois-filhos.md",
+   "track_file": "dom.mp3"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-26",
+   "date_br": "26.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q1-campo-caminhando.png",
+   "verse": "Faltando a lenha, apaga-se o fogo: afastado o mexeriqueiro, terminam as intrigas.",
+   "reflection": "Fofoca é igual lenha. Sem alguém jogando mais, o fogo morre. Na história dos quatro amigos que abriram o telhado pra descer o doente até Jesus tinha quem carregava, quem atrapalhava e quem criticava. Eu já critiquei de longe. Hoje prefiro pegar uma ponta da maca. Você carrega ou comenta?",
+   "reference": "Provérbios 26:20 · CNBB",
+   "track": "Beautiful Worship Piano Peaceful Music (Pixabay)",
+   "source": "06_Pessoal/Reuniões/2026-10-21-devocional-top-1841-carregar-o-paralitico.md",
+   "track_file": "seg.mp3"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-27",
+   "date_br": "27.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q2-jardim-polo.png",
+   "verse": "São mais autênticas as feridas de quem ama do que os beijos enganosos de quem odeia.",
+   "reflection": "Palavra dura de quem te ama machuca e ajuda. Elogio de quem quer te usar só te prende. Na igreja contaram que os inimigos de Jesus começaram elogiando Ele antes de armar a pergunta. Antes eu só queria gente concordando comigo. Hoje agradeço quem me corrige. Quem te fala a verdade?",
+   "reference": "Provérbios 27:6 · CNBB",
+   "track": "Christian Piano Worship Calm Soaking Prayer (Pixabay)",
+   "source": "06_Pessoal/Reuniões/2026-10-18-missa-dia-mundial-das-missoes.md",
+   "track_file": "ter.mp3"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-28",
+   "date_br": "28.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q3-campo-montanha.png",
+   "verse": "Quem encoberta seus crimes não prosperará; quem os confessa e os deixa, esse alcançará misericórdia.",
+   "reflection": "Esconder erro não melhora nada. Quem fala o que fez e para de fazer encontra perdão. Numa pregação pediram pra cada um se perguntar o que anda fazendo que prejudica família e trabalho. Antes eu desviava dessa pergunta. Hoje falo com Deus sem maquiar. O que você está escondendo?",
+   "reference": "Provérbios 28:13 · CNBB",
+   "track": "Worship Piano Instrumental Peaceful Prayer (Pixabay)",
+   "source": "06_Pessoal/Reuniões/2026-09-13-missa-perdoar-setenta-vezes-sete.md",
+   "track_file": "qua.mp3"
+  },
+  {
+   "type": "story-versiculo",
+   "date": "2026-10-29",
+   "date_br": "29.10.2026",
+   "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q4-jardim-lago.png",
+   "verse": "A soberba acaba por trazer a humilhação, enquanto quem é sinceramente humilde será glorificado.",
+   "reflection": "Quem se acha acaba passando vergonha. Quem anda com os pés no chão acaba levantado por Deus. Antes eu pensava que mostrar força era mandar mais alto. Hoje vejo que isso cansa e afasta. Pedir ajuda ficou mais fácil do que fingir. Onde você precisa baixar a bola?",
+   "reference": "Provérbios 29:23 · CNBB",
+   "track": "Instrumental Piano Christian Worship of Jesus (Pixabay)",
+   "source": "versiculo",
+   "track_file": "qui.mp3"
+  }
+ ]
+}
