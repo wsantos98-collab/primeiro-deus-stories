@@ -1,0 +1,95 @@
+{
+  "carrossel_id": "jappa-primeiro-deus-semana16",
+  "format": "story",
+  "author": {
+    "name": "Wellington Jappa",
+    "tagline": "O Gestor Operador",
+    "handle": "@gestao.wellingtonjappa"
+  },
+  "slides": [
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-30",
+      "date_br": "30.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q5-campo-trilha.png",
+      "verse": "Toda palavra de Deus é comprovada: Ele é um escudo para os que Nele se abrigam.",
+      "reflection": "O versículo diz que o que Deus fala sempre se cumpre. E quem corre pra Ele fica protegido. Antes eu confiava mais na minha conta de cabeça do que na promessa Dele. Hoje eu leio e seguro na palavra. Em quem você está se abrigando?",
+      "reference": "Provérbios 30:5 · CNBB",
+      "track": "Prayer Worship Piano Grateful Merciful (Pixabay)",
+      "source": "versiculo",
+      "track_file": "sex.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-10-31",
+      "date_br": "31.10.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q6-jardim-deck.png",
+      "verse": "Abre suas mãos ao necessitado e as estende para o pobre.",
+      "reflection": "Aqui a mulher sábia tem a mão aberta pra quem precisa. Ela repara na falta antes de alguém pedir. Antes eu só ajudava quem vinha falar comigo. Hoje tento olhar em volta e ver quem está apertado e calado. Quem perto de você está precisando?",
+      "reference": "Provérbios 31:20 · CNBB",
+      "track": "Peaceful Piano Worship Gratitude Hope (Pixabay)",
+      "source": "versiculo",
+      "track_file": "sab.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-01",
+      "date_br": "01.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q7-campo-passada.png",
+      "verse": "O temor do Senhor é o princípio do conhecimento; sabedoria e disciplina, os tolos as desprezam.",
+      "reflection": "Respeitar Deus é onde começa aprender de verdade. Num devocional dos Legendários ouvi que tempo de igreja não faz ninguém maduro. Maduro é quem escuta a voz de Deus e deixa ser guiado. Eu já me achei adiantado só por estar lá sempre. Você anda escutando?",
+      "reference": "Provérbios 1:7 · CNBB",
+      "track": "Morning Worship (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-10-26-devocional-top-1841-cegueira-da-frustracao.md",
+      "track_file": "dom.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-02",
+      "date_br": "02.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q1-campo-caminhando.png",
+      "verse": "se a procurares como ao dinheiro, e a esquadrinhares como a um tesouro, então compreenderás o temor do Senhor e alcançarás o conhecimento de Deus.",
+      "reflection": "O versículo manda procurar a sabedoria de Deus com a mesma vontade de quem corre atrás de dinheiro. Eu já cuidei de número com muito mais atenção do que cuidei da minha fé. Hoje reservo um tempo pra ler todo dia. Onde está a sua vontade de verdade?",
+      "reference": "Provérbios 2:4-5 · CNBB",
+      "track": "Beautiful Worship Piano Peaceful Music (Pixabay)",
+      "source": "versiculo",
+      "track_file": "seg.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-03",
+      "date_br": "03.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q2-jardim-polo.png",
+      "verse": "Não digas ao amigo: “Volta depois, amanhã eu te darei”, se podes atender logo.",
+      "reflection": "Se dá pra resolver hoje, não mande a pessoa voltar amanhã. Antes eu achava que adiar era organização. Hoje vejo que muita vez era só desconforto meu, e a pessoa ficava esperando. O que está na sua mão pra fazer agora?",
+      "reference": "Provérbios 3:28 · CNBB",
+      "track": "Christian Piano Worship Calm Soaking Prayer (Pixabay)",
+      "source": "versiculo",
+      "track_file": "ter.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-04",
+      "date_br": "04.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q3-campo-montanha.png",
+      "verse": "Observa a vereda dos teus pés, e todos os teus caminhos serão seguros.",
+      "reflection": "Olhe bem onde você pisa e o caminho fica seguro. Num devocional dos Legendários ouvi a imagem de andar de noite com lanterna. Você só vê o próximo passo, não vê onde termina, e mesmo assim chega. Qual é o passo certo que dá pra dar agora?",
+      "reference": "Provérbios 4:26 · CNBB",
+      "track": "Worship Piano Instrumental Peaceful Prayer (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-10-28-devocional-top-1841-esperanca-que-vem-de-deus.md",
+      "track_file": "qua.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-05",
+      "date_br": "05.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q4-jardim-lago.png",
+      "verse": "Diante do Senhor estão os caminhos do ser humano, e Ele observa todos os nossos passos.",
+      "reflection": "Deus vê cada passo que a gente dá, até o que ninguém aplaude. Antes eu me esforçava mais quando tinha gente olhando. Hoje sei que o jeito que eu trato os meus de casa Ele também está vendo. Como você age quando está só?",
+      "reference": "Provérbios 5:21 · CNBB",
+      "track": "Instrumental Piano Christian Worship of Jesus (Pixabay)",
+      "source": "versiculo",
+      "track_file": "qui.mp3"
+    }
+  ]
+}
