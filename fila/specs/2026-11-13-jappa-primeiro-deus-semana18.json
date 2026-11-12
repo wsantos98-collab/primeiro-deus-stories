@@ -1,0 +1,95 @@
+{
+  "carrossel_id": "jappa-primeiro-deus-semana18",
+  "format": "story",
+  "author": {
+    "name": "Wellington Jappa",
+    "tagline": "O Gestor Operador",
+    "handle": "@gestao.wellingtonjappa"
+  },
+  "slides": [
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-13",
+      "date_br": "13.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q5-campo-trilha.png",
+      "verse": "Fortuna rápida logo diminui; quem junta pouco a pouco, multiplica.",
+      "reflection": "Dinheiro que chega de uma vez some do mesmo jeito. O que fica é o que a gente junta aos poucos. Eu já quis atalho, já corri atrás de ganho rápido. Hoje prefiro o pouco que volta todo mês. Você está juntando ou esperando sorte?",
+      "reference": "Provérbios 13:11 · CNBB",
+      "track": "Prayer Worship Piano Grateful Merciful (Pixabay)",
+      "source": "versiculo",
+      "track_file": "sex.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-14",
+      "date_br": "14.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q6-jardim-deck.png",
+      "verse": "O ingênuo acredita em qualquer palavra, mas o precavido atenta para os passos que dá.",
+      "reflection": "Tem gente que acredita em tudo que escuta. Quem tem juízo confere antes de dizer sim. Eu já comprei promessa bonita sem checar nada e me dei mal. Hoje eu escuto, agradeço e vou atrás pra ver se é verdade. Você confere ou aceita de primeira?",
+      "reference": "Provérbios 14:15 · CNBB",
+      "track": "Peaceful Piano Worship Gratitude Hope (Pixabay)",
+      "source": "versiculo",
+      "track_file": "sab.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-15",
+      "date_br": "15.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q7-campo-passada.png",
+      "verse": "Mais vale um prato de verdura com amor do que, com ódio, um boi gordo inteiro.",
+      "reflection": "Comida simples numa casa em paz vale mais que fartura numa casa brigada. Ouvi num devocional dos Legendários que o primeiro ministério da gente é a própria casa. Antes de falar de fé pra fora, arrumo o que está torto dentro. Como está a sua mesa?",
+      "reference": "Provérbios 15:17 · CNBB",
+      "track": "Morning Worship (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-11-05-devocional-top-1841-toma-posse-da-sua-casa.md",
+      "track_file": "dom.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-16",
+      "date_br": "16.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q1-campo-caminhando.png",
+      "verse": "A soberba precede o abatimento; antes da queda, a arrogância.",
+      "reflection": "Quem se acha leva tombo mais na frente. Achar que não precisa de ninguém é o começo da queda. Eu já confundi fase boa com mérito meu. Hoje, quando dá certo, eu agradeço a Deus e sigo pequeno. O que você faz quando ganha?",
+      "reference": "Provérbios 16:18 · CNBB",
+      "track": "Beautiful Worship Piano Peaceful Music (Pixabay)",
+      "source": "versiculo",
+      "track_file": "seg.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-17",
+      "date_br": "17.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q2-jardim-polo.png",
+      "verse": "Ânimo alegre faz florescer a saúde; espírito abatido seca os ossos.",
+      "reflection": "Coração alegre cura o corpo. Quem vive triste por dentro seca por fora. Ouvi num devocional dos Legendários que a alegria no aperto é coisa de praticar todo dia. Jó perdeu tudo, pôs o rosto no chão e adorou. Você adora também no dia ruim?",
+      "reference": "Provérbios 17:22 · CNBB",
+      "track": "Christian Piano Worship Calm Soaking Prayer (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-11-10-devocional-top-1841-alegria-na-provacao.md",
+      "track_file": "ter.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-18",
+      "date_br": "18.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q3-campo-montanha.png",
+      "verse": "Quem responde antes de ouvir mostra que é tolo, e passa vergonha.",
+      "reflection": "Responder antes de ouvir a história inteira passa vergonha. Eu já fiz isso, já respondi no impulso e tive que voltar atrás depois. Hoje eu deixo a pessoa terminar, mesmo quando acho que já sei o fim. Você ouve até o fim?",
+      "reference": "Provérbios 18:13 · CNBB",
+      "track": "Worship Piano Instrumental Peaceful Prayer (Pixabay)",
+      "source": "versiculo",
+      "track_file": "qua.mp3"
+    },
+    {
+      "type": "story-versiculo",
+      "date": "2026-11-19",
+      "date_br": "19.11.2026",
+      "photo": "/Users/jappa/.claude/skills/designer-carrossel/assets/fotos-primeiro-deus/q4-jardim-lago.png",
+      "verse": "Quem se compadece do pobre empresta ao Senhor, que lhe restituirá o equivalente.",
+      "reflection": "Ajudar quem não tem nada é como emprestar pra Deus, e Ele devolve. Ouvi numa pregação na igreja que a gente pensa que salva o pobre, quando é o pobre que salva a gente. É por ali que Ele nos dá o que falta. Você já sentiu isso?",
+      "reference": "Provérbios 19:17 · CNBB",
+      "track": "Instrumental Piano Christian Worship of Jesus (Pixabay)",
+      "source": "06_Pessoal/Reuniões/2026-11-08-homilia-vigilancia-sabedoria-e-as-dez-virgens.md",
+      "track_file": "qui.mp3"
+    }
+  ]
+}

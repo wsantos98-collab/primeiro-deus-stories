@@ -40,7 +40,7 @@
       "ref": "Provérbios 16:18 · CNBB",
       "tema": "caráter",
       "texto": "A soberba precede o abatimento; antes da queda, a arrogância.",
-      "usado_em": null
+      "usado_em": "2026-11-16"
     },
     {
       "ref": "Provérbios 16:20 · CNBB",
@@ -579,6 +579,48 @@
       "tema": "proverbios",
       "usado_em": "2026-11-12",
       "dia": 12
+    },
+    {
+      "ref": "Provérbios 13:11 · CNBB",
+      "tema": "provérbios",
+      "texto": "Fortuna rápida logo diminui; quem junta pouco a pouco, multiplica.",
+      "usado_em": "2026-11-13",
+      "dia": 13
+    },
+    {
+      "ref": "Provérbios 14:15 · CNBB",
+      "tema": "provérbios",
+      "texto": "O ingênuo acredita em qualquer palavra, mas o precavido atenta para os passos que dá.",
+      "usado_em": "2026-11-14",
+      "dia": 14
+    },
+    {
+      "ref": "Provérbios 15:17 · CNBB",
+      "tema": "provérbios",
+      "texto": "Mais vale um prato de verdura com amor do que, com ódio, um boi gordo inteiro.",
+      "usado_em": "2026-11-15",
+      "dia": 15
+    },
+    {
+      "ref": "Provérbios 17:22 · CNBB",
+      "tema": "provérbios",
+      "texto": "Ânimo alegre faz florescer a saúde; espírito abatido seca os ossos.",
+      "usado_em": "2026-11-17",
+      "dia": 17
+    },
+    {
+      "ref": "Provérbios 18:13 · CNBB",
+      "tema": "provérbios",
+      "texto": "Quem responde antes de ouvir mostra que é tolo, e passa vergonha.",
+      "usado_em": "2026-11-18",
+      "dia": 18
+    },
+    {
+      "ref": "Provérbios 19:17 · CNBB",
+      "tema": "provérbios",
+      "texto": "Quem se compadece do pobre empresta ao Senhor, que lhe restituirá o equivalente.",
+      "usado_em": "2026-11-19",
+      "dia": 19
     }
   ]
 }
